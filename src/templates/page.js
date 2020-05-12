@@ -1,7 +1,9 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader"
 import Layout from "../components/layout"
 import "../main.css"
+deckDeckGoHighlightElement()
 
 export const query = graphql`
   query($slug: String!) {
