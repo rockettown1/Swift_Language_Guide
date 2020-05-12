@@ -2,12 +2,10 @@
 title: "Arrays & Dictionaries"
 ---
 
-Something about functions
+Something about arrays
 
 ```swift
-var hello: String = "something"
+var myAwesomeArray: [String] = ["Code", "Nation"]
 
-@objc func someFunction(_ nom: Int) -> Void {
-  let nom + 2
-}
+myAwesomeArray.append("Digital")
 ```
