@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css?family=Fira+Code:500&display=swap");
+
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  --deckgo-highlight-code-font-family: "Fira Code";
+}
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+p {
+  font-size: 120%;
+}
