@@ -18,7 +18,7 @@ const Welcome = () => {
       <P>
         If you're wanting to take a deep dive into Swift and quickly pick up the
         fundamentals, you are definitely in the right place! We love Swift at
-        Code Nation, and feel is should be as easily accessible as JavaScript
+        Code Nation, and feel it should be as easily accessible as JavaScript
         is.
       </P>
       <Spacer />
@@ -26,9 +26,9 @@ const Welcome = () => {
       <P>
         In the menu you'll find topics which will discuss the different aspects
         of Swift. There'll be examples and use cases, and occasional references
-        other programming languages. If you've studied with us, you'll already
-        be family with JS, so there may be some comparisons thrown in to help
-        you understand the similarities and differences.
+        to other programming languages. If you've studied with us, you'll
+        already be family with JS, so there may be some comparisons thrown in to
+        help you understand the similarities and differences.
       </P>
     </Container>
   )
