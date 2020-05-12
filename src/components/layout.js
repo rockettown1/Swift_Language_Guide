@@ -131,6 +131,7 @@ const Sidebar = styled.div`
   right: 0;
   grid-area: side;
   background-color: rgba(0, 0, 0, 0.9);
+  overflow: scroll;
 `
 
 const PageLinks = styled.div`
