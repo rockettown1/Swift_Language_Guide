@@ -5,7 +5,7 @@ title: Swift Language Guide v0
 
 Pages on this website are generated using SSR-React and markdown files. 
 
-#Contributors
+# Contributors
 To edit a page:
  - Fork the repo
  - Edit the .md file (either directly on gh or locally)
@@ -17,7 +17,7 @@ To create a new page:
 - Create a .md file in the src/swift directory (please follow the numbering convention)
 - Send a pull request.
 
-#Collaborators
+# Collaborators
 If you'd like to be added to this repo as a collaborator so you can avoid all forking then I'm more than happy to do that. Just drop me a message and I'll sort it. 
 
 

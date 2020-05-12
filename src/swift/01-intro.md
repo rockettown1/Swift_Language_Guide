@@ -12,7 +12,7 @@ The compilation step can be extremely useful for checking your code is all good 
 
 ----------
 
-##A little bit of history
+## A little bit of history
 
 Swift 1.0 was released in 2014 as an alternative to a language called Objective-C, which up until then was the main language Apple used for app development. Today we are working with Swift 5.2 (as of March 24th 2020) although developers can still use Objective-C if they choose to.
 
