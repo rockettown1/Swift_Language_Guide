@@ -3,7 +3,9 @@ title: Swift Language Guide v0
 ---
 
 
-Pages on this website are generated using SSR-React and markdown files. 
+Pages on this website are generated using SSR-React and markdown files.
+
+Site pages found in src/swift
 
 # Contributors
 To edit a page:
