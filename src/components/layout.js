@@ -114,6 +114,7 @@ const Info = styled.h3`
 
 const GLink = styled(Link)`
   color: white;
+  font-size: 80%;
   text-decoration: none;
   &:hover {
     text-decoration: underline;
