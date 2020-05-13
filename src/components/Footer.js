@@ -16,6 +16,7 @@ const Container = styled.footer`
   bottom: 0;
   width: 100%;
   height: 2.5rem;
+  z-index: -4;
   box-sizing: border-box;
   padding-left: 100px;
 `

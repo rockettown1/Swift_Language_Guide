@@ -1,64 +1,49 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql, Link } from "gatsby"
 import styled from "styled-components"
 import Power from "../images/big_power_dark.png"
-import CN from "../images/Codenation.png"
-import SwiftLogo from "../images/swift-og.png"
 import Footer from "./Footer"
+import Sidebar from "./Sidebar"
+import Burger from "./Burger"
+import Menu from "./Menu"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query LayoutQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
+  let defaultWindow = { innerWidth: undefined }
+  if (typeof window !== `undefined`) {
+    defaultWindow = window
+  }
+  const [width, setWidth] = useState(defaultWindow.innerWidth)
+  const start = width > 650 ? true : false
+  const [open, setOpen] = useState(start)
+  const [show, setShow] = useState(true)
 
-      allMarkdownRemark(sort: { fields: fields___slug, order: ASC }) {
-        edges {
-          node {
-            frontmatter {
-              title
-            }
-            html
-            fields {
-              slug
-            }
-          }
-        }
-      }
+  useEffect(() => {
+    if (width > 650) {
+      setOpen(true)
+      console.log("useEffect has run")
     }
-  `)
+  }, [])
+  //handle width for resize renders
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowSizeChange)
+  }, [width])
+
+  const handleWindowSizeChange = () => {
+    setWidth(window.innerWidth)
+    if (width > 650) {
+      setOpen(true)
+    }
+  }
 
   return (
     <>
       <Back src={Power} />
       <Container>
         <Main>{children}</Main>
-        <Sidebar>
-          <Logo src={CN} />
-          <SiteTitle>{data.site.siteMetadata.title}</SiteTitle>
-          <Desc>
-            <Swifty src={SwiftLogo} />
-            <Info>Swift Programming Language v5.2</Info>
-          </Desc>
-          <PageLinks>
-            <p>
-              <GLink to="/">Welcome</GLink>
-            </p>
-            {data.allMarkdownRemark.edges.map(edge => {
-              return (
-                <p>
-                  <GLink to={`/${edge.node.fields.slug}`}>
-                    {edge.node.frontmatter.title}
-                  </GLink>
-                </p>
-              )
-            })}
-          </PageLinks>
-        </Sidebar>
+        <Sidebar open={open} width={width} setOpen={setOpen} />
+        <MenuContainer show={show}>
+          <Burger open={open} setOpen={setOpen} width={width} show={show} />
+        </MenuContainer>
         <Footer />
       </Container>
     </>
@@ -81,70 +66,48 @@ const Container = styled.div`
     "main main main side"
     "main main main side"
     "main main main side";
+  @media screen and (max-width: 650px) {
+    width: 100vw;
+
+    /* h1 {
+      font-size: 200%;
+    } */
+    p {
+      font-size: 110%;
+    }
+  }
 `
+
+const MenuContainer = styled.div`
+  width: 100%;
+  z-index: 20;
+  position: fixed;
+  height: 20px;
+  width: 20px;
+  bottom: ${({ show }) => (show ? "100px" : "-300px")};
+  right: 20px;
+  margin-right: 50px;
+  transition: bottom 0.3s ease-in-out;
+  @media screen and (max-width: 500px) {
+    position: fixed;
+  }
+`
+
 const Main = styled.main`
   margin: 100px 100px 0 100px;
   grid-area: main;
   min-height: 150vh;
-`
-
-const SiteTitle = styled.h3`
-  color: white;
-  margin-top: 0;
-`
-const Swifty = styled.img`
-  width: 75px;
-  height: 75px;
-  border-radius: 5px;
-  margin-right: 10px;
-  margin-top: 10px;
-`
-
-const Desc = styled.div`
-  display: flex;
-  justify-content: center;
-  border-top: 1px solid lightgrey;
-  width: 250px;
-`
-
-const Info = styled.h3`
-  color: white;
-  margin-top: 15px;
-`
-
-const GLink = styled(Link)`
-  color: white;
-  font-size: 80%;
-  text-decoration: none;
-  &:hover {
-    text-decoration: underline;
+  @media screen and (max-width: 850px) {
+    margin: 100px 130px 0 30px;
+  }
+  @media screen and (max-width: 650px) {
+    box-sizing: border-box;
+    margin: 100px 0;
+    padding: 30px;
+    width: 100vw;
   }
 `
 
-const Sidebar = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
-  width: 300px;
-  position: fixed;
-  top: 0;
-  right: 0;
-  grid-area: side;
-  background-color: rgba(0, 0, 0, 0.9);
-  overflow: scroll;
-`
-
-const PageLinks = styled.div`
-  border-top: 1px solid lightgrey;
-  width: 250px;
-`
-
-const Logo = styled.img`
-  margin: 20px 0;
-  width: 250px;
-  height: auto;
-`
 const Back = styled.img`
   position: fixed;
   z-index: -5;
@@ -153,4 +116,7 @@ const Back = styled.img`
   margin-right: 300px;
   height: 600px;
   width: auto;
+  @media screen and (max-width: 650px) {
+    margin-right: 0;
+  }
 `

@@ -6,9 +6,11 @@ title: "What is Swift?"
 
 It's a modern, general-purpose programming language with a super clean syntax. It's incredibly fun to write and can be used to make some amazing things for the Apple ecosystem.
 
-It's important to recognise Swift is a compiled programming language, which basically means your source code is translated into machine code *before* it runs. So there's a build stage and a run stage - Xcode will do this for you 😆 If you're coming from a JavaScript background, you'll be used to using an Interpreted language, where no pre-runtime translation takes place.
+### A note before moving foward
 
-The compilation step can be extremely useful for checking your code is all good before attempting to run it. So useful infact that Typescript was invented to add a compiler to JavaScript (among other things!)
+It's important to recognise Swift is a compiled programming language, which basically means your source code is translated into machine code *before* it runs. So there's a build stage and then a run stage - Xcode will do this for you 😆 If you're coming from a JavaScript background, you'll be used to using an Interpreted language, where no pre-runtime translation takes place. You just run your code and magic happens. Or you run your code and the errors happen!
+
+The compilation step can be extremely useful for checking your code is all good before attempting to run it. So useful infact that Typescript was invented to add a compiler to JavaScript (among other things!). Swift makes sure your code is safe to run - dead useful.
 
 ----------
 

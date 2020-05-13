@@ -45,6 +45,9 @@ const H1 = styled.h1``
 const Title = styled.h1`
   margin-top: 0;
   font-size: 500%;
+  @media screen and (max-width: 650px) {
+    font-size: 400%;
+  }
 `
 const Spacer = styled.div`
   height: 50px;
