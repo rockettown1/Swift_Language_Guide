@@ -80,6 +80,7 @@ const Desc = styled.div`
 const Info = styled.h3`
   color: white;
   margin-top: 15px;
+  width: 165px;
 `
 
 const GLink = styled(Link)`
