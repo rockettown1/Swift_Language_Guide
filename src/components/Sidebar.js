@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import CN from "../images/Codenation.png"
 import SwiftLogo from "../images/swift-og.png"
 
-const Sidebar = ({ open, width, setOpen }) => {
+const Sidebar = ({ open, logItem, isSelected }) => {
   const data = useStaticQuery(graphql`
     query LayoutQuery {
       site {
@@ -41,10 +41,14 @@ const Sidebar = ({ open, width, setOpen }) => {
         <p>
           <GLink to="/">Welcome</GLink>
         </p>
-        {data.allMarkdownRemark.edges.map(edge => {
+        {data.allMarkdownRemark.edges.map((edge, index) => {
           return (
-            <p>
-              <GLink to={`/${edge.node.fields.slug}`}>
+            <p key={index}>
+              <GLink
+                to={`/${edge.node.fields.slug}`}
+                onClick={() => logItem(edge.node.fields.slug)}
+                selected={isSelected == edge.node.fields.slug ? true : ""}
+              >
                 {edge.node.frontmatter.title}
               </GLink>
             </p>
@@ -84,11 +88,22 @@ const Info = styled.h3`
 `
 
 const GLink = styled(Link)`
+  /* color: ${({ selected }) => (selected ? "red" : "white")}; */
   color: white;
+  ${({ selected }) =>
+    selected &&
+    css`
+      color: #e4b040;
+    `}
   font-size: 80%;
   text-decoration: none;
   &:hover {
     text-decoration: underline;
+  }
+  @media screen and (max-width: 650px) {
+    &:hover {
+      text-decoration: none;
+    }
   }
 `
 

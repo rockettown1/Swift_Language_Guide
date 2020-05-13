@@ -18,11 +18,10 @@ export default Footer
 const Container = styled.div`
   position: absolute;
   display: flex;
-  align-items: center;
   background-color: rgba(0, 0, 0, 0.9);
   bottom: 0;
   width: 100vw;
-  height: 50px;
+  height: 100px;
   z-index: 0;
 `
 
@@ -32,7 +31,8 @@ const Website = styled.a`
   position: relative;
   text-decoration: none;
 `
-const Now = styled.p`
+const Now = styled.h6`
   color: white;
   font-size: 90%;
+  margin: 0;
 `

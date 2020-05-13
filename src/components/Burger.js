@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-const Burger = ({ open, setOpen, width, show }) => {
+const Burger = ({ open, setOpen, width }) => {
   return (
     <>
       {width <= 650 ? (
@@ -11,7 +11,6 @@ const Burger = ({ open, setOpen, width, show }) => {
             onClick={() => {
               setOpen(!open)
             }}
-            show={show}
           >
             <div />
             <div />

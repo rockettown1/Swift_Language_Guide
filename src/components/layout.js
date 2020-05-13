@@ -15,7 +15,14 @@ const Layout = ({ children }) => {
   const [width, setWidth] = useState(defaultWindow.innerWidth)
   const start = width > 650 ? true : false
   const [open, setOpen] = useState(start)
-  const [show, setShow] = useState(true)
+  const [isSelected, setIsSelected] = useState(null)
+
+  const logItem = listItem => {
+    setIsSelected(listItem)
+    if (width < 650) {
+      setOpen(false)
+    }
+  }
 
   useEffect(() => {
     if (width > 650) {
@@ -40,9 +47,9 @@ const Layout = ({ children }) => {
       <Back src={Power} />
       <Container>
         <Main>{children}</Main>
-        <Sidebar open={open} width={width} setOpen={setOpen} />
-        <MenuContainer show={show}>
-          <Burger open={open} setOpen={setOpen} width={width} show={show} />
+        <Sidebar open={open} logItem={logItem} isSelected={isSelected} />
+        <MenuContainer>
+          <Burger open={open} setOpen={setOpen} width={width} />
         </MenuContainer>
         <Footer />
       </Container>
@@ -80,7 +87,7 @@ const MenuContainer = styled.div`
   position: fixed;
   height: 20px;
   width: 20px;
-  bottom: ${({ show }) => (show ? "100px" : "-300px")};
+  bottom: 100px;
   right: 20px;
   margin-right: 50px;
   transition: bottom 0.3s ease-in-out;
@@ -98,7 +105,7 @@ const Main = styled.main`
   }
   @media screen and (max-width: 650px) {
     box-sizing: border-box;
-    margin: 50px 0;
+    margin: 50px 0 150px 0;
     padding: 30px;
     width: 100vw;
   }
