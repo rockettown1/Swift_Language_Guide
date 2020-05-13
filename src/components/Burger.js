@@ -69,7 +69,7 @@ const StyledBurger = styled.div`
 `
 
 const BurgerContainer = styled.button`
-  background-color: #f5b32f;
+  background-color: #e4b040;
   display: flex;
   justify-content: center;
   align-items: center;
