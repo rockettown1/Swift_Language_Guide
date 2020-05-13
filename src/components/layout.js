@@ -68,10 +68,6 @@ const Container = styled.div`
     "main main main side";
   @media screen and (max-width: 650px) {
     width: 100vw;
-
-    /* h1 {
-      font-size: 200%;
-    } */
     p {
       font-size: 110%;
     }
@@ -102,7 +98,7 @@ const Main = styled.main`
   }
   @media screen and (max-width: 650px) {
     box-sizing: border-box;
-    margin: 100px 0;
+    margin: 50px 0;
     padding: 30px;
     width: 100vw;
   }

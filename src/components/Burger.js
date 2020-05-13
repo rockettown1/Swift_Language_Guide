@@ -25,7 +25,7 @@ const Burger = ({ open, setOpen, width, show }) => {
 
 export default Burger
 
-const StyledBurger = styled.button`
+const StyledBurger = styled.div`
   left: 2rem;
   display: flex;
   flex-direction: column;
@@ -68,7 +68,7 @@ const StyledBurger = styled.button`
   }
 `
 
-const BurgerContainer = styled.div`
+const BurgerContainer = styled.button`
   background-color: #f5b32f;
   display: flex;
   justify-content: center;
@@ -76,4 +76,6 @@ const BurgerContainer = styled.div`
   height: 75px;
   width: 75px;
   border-radius: 50%;
+  outline: none;
+  border: none;
 `

@@ -98,15 +98,16 @@ const SidebarContainer = styled.div`
   height: 100vh;
   width: 300px;
   position: fixed;
+  z-index: 5;
   top: 0;
   right: 0;
   grid-area: side;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: #1a1a1a;
   overflow: scroll;
   transition: transform 0.3s ease-in-out;
 
   @media screen and (max-width: 650px) {
-    background-color: rgba(0, 0, 0, 0.98);
+    background-color: #1a1a1a;
     width: 100vw;
     transform: ${({ open }) => (open ? "translateY(0)" : "translateY(150%)")};
   }
