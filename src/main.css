@@ -16,3 +16,11 @@ body {
 p {
   font-size: 120%;
 }
+
+@media only screen and (max-width: 650px) {
+  html {
+    --deckgo-highlight-code-font-size: 12px;
+    --deckgo-highlight-code-padding: 0 16px 16px 16px;
+    --deckgo-highlight-code-white-space: pre;
+  }
+}

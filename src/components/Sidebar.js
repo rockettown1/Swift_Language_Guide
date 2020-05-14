@@ -33,13 +33,20 @@ const Sidebar = ({ open, logItem, isSelected }) => {
     <SidebarContainer open={open}>
       <Logo src={CN} />
       <SiteTitle>{data.site.siteMetadata.title}</SiteTitle>
+
       <Desc>
         <Swifty src={SwiftLogo} />
         <Info>Swift Programming Language v5.2</Info>
       </Desc>
       <PageLinks>
         <p>
-          <GLink to="/">Welcome</GLink>
+          <GLink
+            to="/"
+            onClick={() => logItem("welcome")}
+            selected={isSelected == "welcome" ? true : ""}
+          >
+            Welcome
+          </GLink>
         </p>
         {data.allMarkdownRemark.edges.map((edge, index) => {
           return (
@@ -70,25 +77,25 @@ const Swifty = styled.img`
   height: 75px;
   border-radius: 5px;
   margin-right: 10px;
-  margin-top: 10px;
 `
 
 const Desc = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
   border-top: 1px solid lightgrey;
   border-bottom: 1px solid lightgrey;
   width: 250px;
+  height: 100px;
 `
 
 const Info = styled.h3`
   color: white;
-  margin-top: 15px;
+
   width: 165px;
 `
 
 const GLink = styled(Link)`
-  /* color: ${({ selected }) => (selected ? "red" : "white")}; */
   color: white;
   ${({ selected }) =>
     selected &&

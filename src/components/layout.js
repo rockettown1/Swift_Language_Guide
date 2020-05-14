@@ -5,7 +5,6 @@ import Power from "../images/big_power_dark.png"
 import Footer from "./Footer"
 import Sidebar from "./Sidebar"
 import Burger from "./Burger"
-import Menu from "./Menu"
 
 const Layout = ({ children }) => {
   let defaultWindow = { innerWidth: undefined }
@@ -27,9 +26,9 @@ const Layout = ({ children }) => {
   useEffect(() => {
     if (width > 650) {
       setOpen(true)
-      console.log("useEffect has run")
     }
   }, [])
+
   //handle width for resize renders
   useEffect(() => {
     window.addEventListener("resize", handleWindowSizeChange)
