@@ -5,6 +5,7 @@ import Power from "../images/big_power_dark.png"
 import Footer from "./Footer"
 import Sidebar from "./Sidebar"
 import Burger from "./Burger"
+import QuickFind from "./QuickFind"
 
 const Layout = ({ children }) => {
   let defaultWindow = { innerWidth: undefined }

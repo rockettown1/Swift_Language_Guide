@@ -38,6 +38,7 @@ module.exports = {
               lineNumbers: true,
             },
           },
+          `gatsby-remark-autolink-headers`,
         ],
       },
     },
