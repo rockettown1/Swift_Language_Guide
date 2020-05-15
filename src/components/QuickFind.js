@@ -22,7 +22,7 @@ const QuickFind = ({ headings, location, slug }) => {
                   .replace(/\s+/g, "-")
                   .toLowerCase()}`}
               >
-                {heading.value}
+                - {heading.value}
               </GLink>
             )
           })}

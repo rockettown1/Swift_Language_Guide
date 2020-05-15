@@ -49,8 +49,8 @@ module.exports = {
         name: `CN Swift Guide`,
         short_name: `Swift-Guide`,
         start_url: `/`,
-        background_color: `#274e9b`,
-        theme_color: `#274e9b`,
+        background_color: `#1A1A1A`,
+        theme_color: `#1A1A1A`,
         display: `standalone`,
         icon: `src/images/big_power_dark.png`, // This path is relative to the root of the site.
       },
