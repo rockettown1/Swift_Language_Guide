@@ -87,7 +87,7 @@ const MenuContainer = styled.div`
   position: fixed;
   height: 20px;
   width: 20px;
-  bottom: 100px;
+  bottom: 120px;
   right: 20px;
   margin-right: 50px;
   transition: bottom 0.3s ease-in-out;

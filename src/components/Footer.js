@@ -20,12 +20,16 @@ const Container = styled.div`
   position: absolute;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+
+  justify-content: center;
   background-color: rgba(0, 0, 0, 0.9);
   bottom: 0;
   width: 100vw;
-  height: 85px;
+  height: 105px;
   z-index: 0;
+  @media screen and (max-width: 650px) {
+    align-items: center;
+  }
 `
 
 const Website = styled.a`

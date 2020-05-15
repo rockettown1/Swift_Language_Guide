@@ -24,9 +24,13 @@ export default Social
 
 const Container = styled.div`
   display: flex;
+  margin-bottom: 10px;
 `
 
 const Soc = styled.img`
   height: 25px;
   margin: 10px 10px 0px 20px;
+  @media screen and (max-width: 650px) {
+    margin: 10px 10px 0px 10px;
+  }
 `
