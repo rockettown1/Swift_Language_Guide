@@ -1,18 +1,13 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import { graphql, useStaticQuery, Link } from "gatsby"
+if (typeof window !== "undefined") {
+  // eslint-disable-next-line global-require
+  require("smooth-scroll")('a[href*="#"]')
+}
 
 const QuickFind = ({ headings, location, slug }) => {
   const [drop, setDrop] = useState(false)
-
-  // useEffect(() => {
-  //   data.allMarkdownRemark.edges.map(edge => {
-  //     if (location.pathname.includes(edge.node.fields.slug)) {
-  //       setHeadings(edge.node.headings)
-  //       setSlug(edge.node.fields.slug)
-  //     }
-  //   })
-  // }, [])
 
   return (
     <Container>
@@ -48,11 +43,12 @@ const Container = styled.div`
   padding: 5px;
 `
 const Dropdown = styled.div`
-  background-color: rgba(242, 242, 242, 0.9);
+  background-color: rgba(242, 242, 242, 0.95);
 
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 250px;
   padding: 10px;
   border-bottom-left-radius: 5px;
