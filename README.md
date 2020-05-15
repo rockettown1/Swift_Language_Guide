@@ -1,9 +1,9 @@
----
-title: Swift Language Guide v0
----
 
+### Swift Language Guide v0
 
-Pages on this website are generated using SSR-React and markdown files.
+![screens](./screens.png)
+
+Pages on this website/PWA are generated using SSR-React and markdown files.
 
 Site pages found in src/swift
 
