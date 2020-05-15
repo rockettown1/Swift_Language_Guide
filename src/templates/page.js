@@ -27,7 +27,7 @@ export const query = graphql`
 const Page = props => {
   const edit = `https://github.com/rockettown1/Swift_Language_Guide/blob/master/src/swift/${props.data.markdownRemark.fields.slug}.md`
   return (
-    <>
+    <Container>
       <QuickFind
         location={props.location}
         headings={props.data.markdownRemark.headings}
@@ -41,11 +41,15 @@ const Page = props => {
         <p>Want to contribute?</p>
         <a href={edit}>Edit this page</a>
       </Contribute>
-    </>
+    </Container>
   )
 }
 
 export default Page
+
+const Container = styled.div`
+  margin-bottom: 150px;
+`
 
 const Contribute = styled.div`
   p {
