@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import QuickFind from "../components/QuickFind"
+import styled from "styled-components"
 import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader"
 // import Layout from "../components/layout"
 import "../main.css"
@@ -24,6 +25,7 @@ export const query = graphql`
 `
 
 const Page = props => {
+  const edit = `https://github.com/rockettown1/Swift_Language_Guide/blob/master/src/swift/${props.data.markdownRemark.fields.slug}.md`
   return (
     <>
       <QuickFind
@@ -35,8 +37,19 @@ const Page = props => {
       <div
         dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }}
       ></div>
+      <Contribute>
+        <p>Want to contribute?</p>
+        <a href={edit}>Edit this page</a>
+      </Contribute>
     </>
   )
 }
 
 export default Page
+
+const Contribute = styled.div`
+  p {
+    font-size: 80%;
+    margin-bottom: 0;
+  }
+`
