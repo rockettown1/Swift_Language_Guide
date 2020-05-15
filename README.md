@@ -22,4 +22,7 @@ To create a new page:
 # Collaborators
 If you'd like to be added to this repo as a collaborator so you can avoid all forking then I'm more than happy to do that. Just drop me a message and I'll sort it. 
 
+
+----------
+
 If you're kind enough to add to this project please familiarise yourself with markdown syntax.
