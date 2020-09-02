@@ -1,5 +1,5 @@
 
-### Swift Language Guide v0
+### Swift Language Guide v0.1.0
 
 ![screens](./screens.png)
 
